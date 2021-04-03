@@ -34,10 +34,10 @@ button.addEventListener("click", function (event) {
         var temp = document.getElementById("temp")
         var tempInKelv = data.main.temp
         var tempInDeg = kelvToF(tempInKelv)
-        temp.innerHTML = `${tempInDeg}\u00B0F`
+        temp.innerHTML = `${tempInDeg} \u00B0`
 
         var feelsLike = document.getElementById("feelsLike")
-        feelsLike.innerHTML = `Feels like ${kelvToF(data.main.feels_like)}\u00B0F. ${data.weather[0].description}.`
+        feelsLike.innerHTML = `Feels like ${kelvToF(data.main.feels_like)}\u00B0F`
 
         var display = document.getElementById("forecast")
         display.innerHTML = `Forecast: ${data.weather[0].main}`;
@@ -48,8 +48,20 @@ button.addEventListener("click", function (event) {
         var wind = document.getElementById("wind")
         wind.innerHTML = `Wind speed: ${data.wind.speed} MPG`;
 
-        var pressure = document.getElementById("pressure")
-        pressure.innerHTML = `pressure: ${data.main.pressure} hPa`
+        // var pressure = document.getElementById("pressure")
+        // pressure.innerHTML = `pressure: ${data.main.pressure} hPa`
+
+        if (display.innerHTML == 'Forecast: Clear') {
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1544829728-e5cb9eedc20e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')"
+        } if (display.innerHTML == 'Forecast: Clouds') {
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1525776759712-7b066ce45de0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1949&q=80')"
+        } if (display.innerHTML == 'Forecast: Snow') {
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1564260508434-ba6958a4c468?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1291&q=80')"
+        } if (display.innerHTML == 'Forecast: Rain') {
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1520609798519-2e1e8c18df3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80')"
+        } if (display.innerHTML == 'Forecast: Haze') {
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1465205568425-23fdd3805e49?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80')"
+        }
 
     }
 
@@ -61,6 +73,8 @@ button.addEventListener("click", function (event) {
         .then(data => addContent(data))
         // unable to get .catch to work
         .catch(err => alert('incorrect Location, Try Again'))
+
+
 });
 
 
