@@ -52,15 +52,15 @@ button.addEventListener("click", function (event) {
         // pressure.innerHTML = `pressure: ${data.main.pressure} hPa`
 
         if (display.innerHTML == 'Forecast: Clear') {
-            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1544829728-e5cb9eedc20e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')"
+            document.body.style.backgroundImage = "url('attachments/sun.gif')"
         } if (display.innerHTML == 'Forecast: Clouds') {
-            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1525776759712-7b066ce45de0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1949&q=80')"
+            document.body.style.backgroundImage = "url('attachments/clearskys.gif')"
         } if (display.innerHTML == 'Forecast: Snow') {
-            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1564260508434-ba6958a4c468?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1291&q=80')"
+            document.body.style.backgroundImage = "url('attachments/snow.gif')"
         } if (display.innerHTML == 'Forecast: Rain') {
-            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1520609798519-2e1e8c18df3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80')"
-        } if (display.innerHTML == 'Forecast: Haze') {
-            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1465205568425-23fdd3805e49?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80')"
+            document.body.style.backgroundImage = "url('attachments/rain.gif')"
+        } if ((display.innerHTML == 'Forecast: Haze') || (display.innerHTML == 'Forecast: Mist')) {
+            document.body.style.backgroundImage = "url('attachments/fog.gif')"
         }
 
     }
